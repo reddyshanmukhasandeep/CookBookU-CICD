@@ -1,0 +1,70 @@
+<div class="container">
+      <div class="row" style="padding-top:10px;padding-left: 10px;">
+                 <div class="heading col-lg-6">
+                 <h2>{{title}}</h2>
+                 </div>
+                 <div class="col-lg-6 icon" >
+                   <a [routerLink]="['../uploadchallenge']"  ><img src="assets/Add_icon.png" alt="" /></a>
+                 </div>
+      </div>
+
+<div class="container">
+        <div class="row">
+          <div class="col-lg-11">
+            <input class="form-control font" #box (keyup.enter)="getUsers(box.value)" (blur)="getUsers(box.value)" type="text" [(ngModel)]= "value"  name="value" placeholder="Enter text,tag,Description"/>
+          </div>
+          <div class="col-lg-1">
+             <img  class="searchicon" src="assets/search.png">
+          </div>
+        </div>
+        <div class="noresults" *ngIf=result>
+          <h4> No Results found </h4>
+        </div>
+
+          <div class="challenges" style="padding-top:10px" *ngIf=!result>
+       <div class="panel-group" [attr.id]="'accordion_' + i" *ngFor="let challenge of challengeList|filter:value; let i = index;" role="tablist" aria-multiselectable="true">
+         <!-- <div class="noresults" *ngIf="!i">
+           <h4> No Results found </h4>
+         </div> -->
+
+           <div class="panel panel-default" >
+               <div class="panel-heading" role="tab">
+                   <h4 class="panel-title">
+                       <a role="button" (click) =arrow() data-toggle="collapse" aria-expanded="false" aria-controls="collapseOne" [attr.data-parent]="'#accordion_' + i" [attr.href]="'#collapseOne_' + i"> {{challenge.description}} </a>
+                  <a (click) =arrow() *ngIf=showArrow data-toggle="collapse" [attr.data-parent]="'#accordion_' + i" [attr.href]="'#collapseOne_' + i" ><i class="fa fa-angle-down fa-1x position"></i></a>
+                  <a (click) =arrow() *ngIf=!showArrow data-toggle="collapse" [attr.data-parent]="'#accordion_' + i" [attr.href]="'#collapseOne_' + i" ><i class="fa fa-angle-up  fa-1x position"></i></a>
+                   </h4>
+               </div>
+              <div [attr.id]="'collapseOne_' + i" role="tabpanel" class="panel-collapse collapse in" >
+                <ul>
+                  <div class="panel-body listitems">
+
+                      <li *ngFor="let tag of challenge.tag_id" class="listitems" >
+                      <span class="badge pos">{{tag}}</span> &nbsp;
+                          </li>
+                          <br>
+                          <ul class="list">
+                            <li *ngFor="let solution of challenge.solution" class="list">
+                                <p>
+                                  {{solution.solution}}
+                                </p>
+                                <ul class="list">
+                                  <p>
+                                    <b>Reference URL</b>
+                                  </p>
+                                  <li *ngFor ="let url of solution.reference_URL" class="list">
+                                      <p>  <a href={{url}}>{{url}}</a></p>
+                                  </li>
+                                </ul>
+                            </li>
+                          </ul>
+                      </div>
+                    </ul>
+
+                </div>
+       </div>
+
+     </div>
+
+</div>
+</div>

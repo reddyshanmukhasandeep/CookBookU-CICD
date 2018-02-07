@@ -1,0 +1,57 @@
+.heading{
+  padding-left: 10px 0  0 25px;
+  font: bold Arial;
+}
+.challenges[_ngcontent-c2] {
+    margin-left: -5px!important;
+    margin-top: -143px;
+}
+.pagination {
+    margin-left: 70% !important
+  }
+
+.icon{
+
+  padding: 0 0 0 407px;
+  cursor:pointer;
+  cursor:hand;
+}
+
+.downicon{
+  padding-left: 97%;
+  margin-top: -59px;
+}
+
+.tags{
+  padding-left: 0px;
+}
+
+.solution{
+  padding-left: 0px;
+}
+.searchicon{
+  height: 17%;
+  margin-left: -66px;
+  margin-top: -1px;
+}
+.noresults{
+      margin-top: -143px;
+}
+.pos{
+  font-size: 100%;
+}
+.font{
+  font-size: 2rem !important;
+}
+.display{
+  background-image: "../../assests/search.png";
+  padding-top: 10px;
+}
+.listitems{
+  text-decoration: none;
+  display: inline;
+}
+.list{
+  text-decoration: none;
+  display: inline;
+}

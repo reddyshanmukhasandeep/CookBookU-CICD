@@ -1,0 +1,71 @@
+<div class="container" style="font-size:150%">
+
+
+<div class="container" style="padding-top:10px">
+  <div class="row">
+    <ul class="nav nav-pills">
+       <li routerLinkActive="active"><a routerLink="/challenges">Challenges</a></li>
+      <li routerLinkActive="active"><a routerLink="/solution">Solution</a></li>
+    </ul>
+  </div>
+</div>
+
+ <div class="container" style="padding-top:10px">
+    <div class="form-group">
+      <form  novalidate>
+          <div class="row">
+            <div class="col-md-6 ">
+              <label for="title"> Challege Title</label>
+              <input type="text" class="form-control" name="title" value="title"  id="title" style="font-size:100%">
+            </div>
+            <div class="col-md-6">
+              <label>PlatForm</label>
+              <select class="form-control">
+                 <option  *ngFor='let platform of platformList' [value]="platform">{{platform.platform}}</option>
+               </select>
+              </div>
+          </div>
+
+          <div class="row" style="padding-top:10px">
+             <div class="col-md-6">
+                <label>Programming Language</label>
+                <select class="form-control">
+                   <option  *ngFor='let platform of platformList' [value]="platform">{{platform.platform}}</option>
+                 </select>
+             </div>
+
+             <div class="col-md-6">
+               <label for="">Details/Description</label> <br>
+               <textarea name="name" rows="4" cols="72"></textarea>
+             </div>
+
+          </div>
+        <div class=" row container" style="margin-top: -41px;margin-left:-31px;">
+             <div class="col-md-6">
+                <label for="">Tags</label> <br>
+                <!-- <a (click)=showTags()><img src="assets/Add_icon_sm.png" (click)=showTags() alt="addIcon" /> </a> -->
+                <div class="showTags" >
+                  <tag-input [(ngModel)]='tags' name="tags" ></tag-input>
+                </div>
+
+             </div>
+
+              <div class="col-md-1" style="padding-top:41px;padding-left:50px">
+                <label for="private">Private</label>
+                <input type="checkbox" name="private" value="private"  id="private">
+              </div>
+</div>
+
+         <div class="container">
+           <button class="btn btn-danger pull-right  btn-lg" type="button" name="button" [routerLink]="['../solution']" style="height:100%;width:10%">Next</button>
+
+         </div>
+
+        </form>
+    </div>
+</div>
+
+
+
+
+</div>

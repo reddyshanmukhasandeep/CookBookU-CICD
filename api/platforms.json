@@ -1,0 +1,16 @@
+{
+  "platforms": [
+    {
+      "id": 1,
+      "platform": "PCF"
+    },
+    {
+      "id": 2,
+      "platform": "BlueMix"
+    },
+    {
+      "id": 3,
+      "platform": "Azure"
+    }
+  ]
+}
