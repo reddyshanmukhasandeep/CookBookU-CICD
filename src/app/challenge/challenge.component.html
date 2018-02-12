@@ -38,6 +38,12 @@
                </div>
               <div [attr.id]="'collapseOne_' + i" role="tabpanel" class="container panel-collapse collapse in" >
                   <div class="panel-body listitems" style="padding-left:10px">
+				   <p >
+                                    {{challenge.description}}
+                                  </p>
+								  
+				  
+				  <br>
                       <span *ngIf="challenge?.tags!==undefined" class="badge pos">{{challenge.tags}}  </span> &nbsp;
                           <div class="">
                             <ul class="list" style="text-align:justify;font-size:114%">
@@ -45,11 +51,12 @@
                                   <p >
                                     {{solution.description}}
                                   </p>
-
+<div *ngIf="solution?.reference_link!==''">
                                     <p>
                                       <b>Reference URL</b>
                                     </p>
-                                        <p>  <a href={{solution.reference_link}}>{{solution.reference_link}}</a></p>
+                                        <p>  <a href={{solution.reference_link}} target="_blank">{{solution.reference_link}}</a></p>
+										</div>
                               </li>
                             </ul>
                           </div>
