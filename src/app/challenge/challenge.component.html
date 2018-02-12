@@ -39,9 +39,7 @@
               <div [attr.id]="'collapseOne_' + i" role="tabpanel" class="container panel-collapse collapse in" >
                   <div class="panel-body listitems" style="padding-left:10px">
 
-                    <div class="" *ngIf="challenge?.tags!==''">
-                      <span  class="badge pos">{{challenge.tags}}  </span> &nbsp;  <br>
-                    </div>
+
 
                       <div class="">
                         <h4 style="margin-top:6px">
@@ -52,13 +50,11 @@
                                     </p>
                       </div>
 
-				   <p id="description">
-                                    {{challenge.description}}
-                                  </p>
-								  
-				  
-				  <br>
-                      <span *ngIf="challenge?.tags!==undefined" class="badge pos">{{challenge.tags}}  </span> &nbsp;
+				<br />
+        <div class="" *ngIf="challenge?.tags!==''">
+          <span  class="badge pos">{{challenge.tags}}  </span> &nbsp;  <br>
+        </div>
+        <br />
 
                           <div class="">
                             <ul class="list" style="text-align:justify;">
