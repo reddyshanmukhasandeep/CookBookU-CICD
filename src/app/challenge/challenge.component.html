@@ -38,7 +38,7 @@
                </div>
               <div [attr.id]="'collapseOne_' + i" role="tabpanel" class="container panel-collapse collapse in" >
                   <div class="panel-body listitems" style="padding-left:10px">
-				   <p >
+				   <p id="description">
                                     {{challenge.description}}
                                   </p>
 								  
@@ -48,7 +48,7 @@
                           <div class="">
                             <ul class="list" style="text-align:justify;font-size:114%">
                                 <li *ngFor="let solution of challenge.solutionDocuemnt" class="list">
-                                  <p >
+                                  <p id="description">
                                     {{solution.description}}
                                   </p>
 <div *ngIf="solution?.reference_link!==''">
