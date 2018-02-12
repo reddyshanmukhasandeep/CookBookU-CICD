@@ -38,6 +38,7 @@
                </div>
               <div [attr.id]="'collapseOne_' + i" role="tabpanel" class="container panel-collapse collapse in" >
                   <div class="panel-body listitems" style="padding-left:10px">
+<<<<<<< HEAD
                     <div class="" *ngIf="challenge?.tags!==''">
                       <span  class="badge pos">{{challenge.tags}}  </span> &nbsp;  <br>
                     </div>
@@ -50,12 +51,24 @@
                                       {{challenge.description}}
                                     </p>
                       </div>
+=======
+				   <p id="description">
+                                    {{challenge.description}}
+                                  </p>
+								  
+				  
+				  <br>
+                      <span *ngIf="challenge?.tags!==undefined" class="badge pos">{{challenge.tags}}  </span> &nbsp;
+>>>>>>> 4f56d7bbfa5ba0a72dbe36314b39f094d24d650c
                           <div class="">
                             <ul class="list" style="text-align:justify;">
                                 <li *ngFor="let solution of challenge.solutionDocuemnt" class="list">
+<<<<<<< HEAD
                                   <h4 style="margin-top:-17px">
                                    <b>Solution</b>
                                   </h4>
+=======
+>>>>>>> 4f56d7bbfa5ba0a72dbe36314b39f094d24d650c
                                   <p id="description">
                                     {{solution.description}}
                                   </p>
