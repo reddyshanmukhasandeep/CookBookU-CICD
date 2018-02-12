@@ -38,23 +38,31 @@
                </div>
               <div [attr.id]="'collapseOne_' + i" role="tabpanel" class="container panel-collapse collapse in" >
                   <div class="panel-body listitems" style="padding-left:10px">
-				   <p >
-                                    {{challenge.description}}
-                                  </p>
-								  
-				  
-				  <br>
-                      <span *ngIf="challenge?.tags!==undefined" class="badge pos">{{challenge.tags}}  </span> &nbsp;
+                    <div class="" *ngIf="challenge?.tags!==''">
+                      <span  class="badge pos">{{challenge.tags}}  </span> &nbsp;  <br>
+                    </div>
+
+                      <div class="">
+                        <h4 style="margin-top:6px">
+                          <b>Description</b>
+                        </h4>
+                            <p id="description">
+                                      {{challenge.description}}
+                                    </p>
+                      </div>
                           <div class="">
-                            <ul class="list" style="text-align:justify;font-size:114%">
+                            <ul class="list" style="text-align:justify;">
                                 <li *ngFor="let solution of challenge.solutionDocuemnt" class="list">
-                                  <p >
+                                  <h4 style="margin-top:-17px">
+                                   <b>Solution</b>
+                                  </h4>
+                                  <p id="description">
                                     {{solution.description}}
                                   </p>
-<div *ngIf="solution?.reference_link!==''">
-                                    <p>
+                                  <div *ngIf="solution?.reference_link!==''">
+                                    <h4>
                                       <b>Reference URL</b>
-                                    </p>
+                                    </h4>
                                         <p>  <a href={{solution.reference_link}} target="_blank">{{solution.reference_link}}</a></p>
 										</div>
                               </li>

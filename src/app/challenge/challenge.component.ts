@@ -32,14 +32,23 @@ export class ChallengeComponent implements OnInit {
 
       this.result=false;
       this.value=value;
-	  this.challengeService.getChallengeByText(value).subscribe(res => this.challengeList=res);
-    console.log("challengeList" +this.challengeList )
-    if (typeof this.challengeList !== "undefined" && this.challengeList.length>0 ) {
-       console.log("display "+this.display)
-         this.display = false
-    }
-    else {   this.display=true;
-    console.log("display else"+ this.display);}
+
+	   this.challengeService.getChallengeByText(value).subscribe(res =>
+       {
+         this.challengeList=res;
+
+      console.log("challengeList" +this.challengeList )
+      if (typeof this.challengeList !== "undefined" && this.challengeList.length>0 ) {
+         console.log("display if block "+this.display)
+           this.display = false
+      }
+      else {   this.display=true;
+      console.log("display else block "+ this.display);}
+
+    });
+
+
+
 
 
 

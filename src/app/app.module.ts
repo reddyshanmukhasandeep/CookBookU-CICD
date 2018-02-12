@@ -11,8 +11,6 @@ import { ChallengeComponent } from './challenge/challenge.component';
 import {FilterPipe} from './filter.pipe';
 import {ChallengeService} from './challenge.service';
 import { HeaderComponent } from './header/header.component';
-import { ChallengesComponent } from './challenges/challenges.component';
-import { SolutionComponent } from './solution/solution.component';
 import { TagInputModule } from 'ngx-chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {TabsModule} from "ng2-tabs";
@@ -27,8 +25,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     ChallengeComponent,
     FilterPipe,
     HeaderComponent,
-    ChallengesComponent,
-    SolutionComponent,
     UploadchallengeComponent
 
 
