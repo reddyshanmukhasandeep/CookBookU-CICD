@@ -11,55 +11,51 @@
 <div class="container">
         <div class="row">
           <div class="col-lg-11">
-            <input class="form-control font" #box (keyup.enter)="getUsers(box.value)" (blur)="getUsers(box.value)" type="text" [(ngModel)]= "value"  name="value" placeholder="Enter text,tag,Description"/>
+            <!-- #box (keyup.enter)="getChallenges(box.value)" (blur)="getChallenges(box.value)" -->
+            <input class="form-control font" #box (keyup.enter)="getChallenges(box.value)"  type="text" [(ngModel)]= "value"  name="value" placeholder="Enter text,tag,Description"/>
           </div>
           <div class="col-lg-1">
              <img  class="searchicon" src="assets/search.png">
           </div>
         </div>
         <div class="noresults" *ngIf=result>
-          <h4> No Results found </h4>
+          <h4> Enter Some Text </h4>
+        </div>
+        <div class="noresults" *ngIf="!result&&display">
+          <h4> No Results found After Search </h4>
         </div>
 
-          <div class="challenges" style="padding-top:10px" *ngIf=!result>
-       <div class="panel-group" [attr.id]="'accordion_' + i" *ngFor="let challenge of challengeList|filter:value; let i = index;" role="tablist" aria-multiselectable="true">
-         <!-- <div class="noresults" *ngIf="!i">
-           <h4> No Results found </h4>
-         </div> -->
+          <div class="challenges" style="padding-top:10px" *ngIf="!result&&!display">
+       <div class="panel-group" [attr.id]="'accordion_' + i" *ngFor="let challenge of challengeList ; let i = index;" role="tablist" aria-multiselectable="true" style="font-size: 115%;">
 
-           <div class="panel panel-default" >
+               <div class="panel panel-default" >
                <div class="panel-heading" role="tab">
                    <h4 class="panel-title">
-                       <a role="button" (click) =arrow() data-toggle="collapse" aria-expanded="false" aria-controls="collapseOne" [attr.data-parent]="'#accordion_' + i" [attr.href]="'#collapseOne_' + i"> {{challenge.description}} </a>
+                       <a role="button" (click) =arrow() data-toggle="collapse" aria-expanded="false" aria-controls="collapseOne" [attr.data-parent]="'#accordion_' + i" [attr.href]="'#collapseOne_' + i"> {{challenge.title}} </a>
                   <a (click) =arrow() *ngIf=showArrow data-toggle="collapse" [attr.data-parent]="'#accordion_' + i" [attr.href]="'#collapseOne_' + i" ><i class="fa fa-angle-down fa-1x position"></i></a>
                   <a (click) =arrow() *ngIf=!showArrow data-toggle="collapse" [attr.data-parent]="'#accordion_' + i" [attr.href]="'#collapseOne_' + i" ><i class="fa fa-angle-up  fa-1x position"></i></a>
                    </h4>
                </div>
-              <div [attr.id]="'collapseOne_' + i" role="tabpanel" class="panel-collapse collapse in" >
-                <ul>
-                  <div class="panel-body listitems">
-
-                      <li *ngFor="let tag of challenge.tag_id" class="listitems" >
-                      <span class="badge pos">{{tag}}</span> &nbsp;
-                          </li>
-                          <br>
-                          <ul class="list">
-                            <li *ngFor="let solution of challenge.solution" class="list">
-                                <p>
-                                  {{solution.solution}}
-                                </p>
-                                <ul class="list">
-                                  <p>
-                                    <b>Reference URL</b>
+              <div [attr.id]="'collapseOne_' + i" role="tabpanel" class="container panel-collapse collapse in" >
+                  <div class="panel-body listitems" style="padding-left:10px">
+                      <span *ngIf="challenge?.tags!==undefined" class="badge pos">{{challenge.tags}}  </span> &nbsp;
+                          <div class="">
+                            <ul class="list" style="text-align:justify;font-size:114%">
+                                <li *ngFor="let solution of challenge.solutionDocuemnt" class="list">
+                                  <p >
+                                    {{solution.description}}
                                   </p>
-                                  <li *ngFor ="let url of solution.reference_URL" class="list">
-                                      <p>  <a href={{url}}>{{url}}</a></p>
-                                  </li>
-                                </ul>
-                            </li>
-                          </ul>
+
+                                    <p>
+                                      <b>Reference URL</b>
+                                    </p>
+                                        <p>  <a href={{solution.reference_link}}>{{solution.reference_link}}</a></p>
+                              </li>
+                            </ul>
+                          </div>
+
                       </div>
-                    </ul>
+
 
                 </div>
        </div>
@@ -67,4 +63,5 @@
      </div>
 
 </div>
+
 </div>

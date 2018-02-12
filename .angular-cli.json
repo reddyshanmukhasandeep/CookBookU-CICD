@@ -22,7 +22,8 @@
         "styles.css",
        "../node_modules/bootstrap/dist/css/bootstrap.css",
        "../node_modules/font-awesome/css/font-awesome.css",
-       "../node_modules/jquery/dist/jquery.min.js"
+       "../node_modules/jquery/dist/jquery.min.js",
+       "../node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

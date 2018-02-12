@@ -19,6 +19,8 @@ import {TabsModule} from "ng2-tabs";
 import { UploadchallengeComponent } from './uploadchallenge/uploadchallenge.component' ;
 import { ReactiveFormsModule } from '@angular/forms';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     ChallengesComponent,
     SolutionComponent,
-    UploadchallengeComponent,
+    UploadchallengeComponent
+
 
   ],
   imports: [
@@ -42,6 +45,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     TagInputModule,
     BrowserAnimationsModule,
     ReactiveFormsModule
+
   ],
   providers: [ChallengeService],
   bootstrap: [AppComponent]

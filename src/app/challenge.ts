@@ -2,15 +2,24 @@ export interface Challenge {
 
     title:string
     description:string,
-    platForm:string,
-    language:string,
-    tags:string[],
-
-    solution:Solution[]
+    platform_id:Platform,
+    language_id:Language,
+    tags:any,
+    solutions:Solution
 
 }
 
 export interface Solution {
-    solution:string,
-    reference_URL:string[]
+    description:string,
+    reference_link:any
+}
+
+export interface Platform {
+  id:number,
+  platform:string
+}
+
+export interface Language {
+    id:number,
+    language:string
 }
