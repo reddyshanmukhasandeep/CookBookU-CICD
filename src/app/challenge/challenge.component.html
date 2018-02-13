@@ -12,10 +12,10 @@
         <div class="row">
           <div class="col-lg-11">
             <!-- #box (keyup.enter)="getChallenges(box.value)" (blur)="getChallenges(box.value)" -->
-            <input class="form-control font" #box (keyup.enter)="getChallenges(box.value)"  type="text" [(ngModel)]= "value"  name="value" placeholder="Enter text,tag,Description"/>
+            <input  class="form-control font" #box (keyup.enter)="getChallenges(box.value)"  type="text" [(ngModel)]= "value"  name="value" placeholder="Enter text,tag,Description"/>
           </div>
           <div class="col-lg-1">
-             <img  class="searchicon" src="assets/search.png">
+             <img  style="cursor: pointer" (click)="getChallenges(value)" class="searchicon" src="assets/search.png">
           </div>
         </div>
         <div class="noresults" *ngIf=result>
@@ -87,17 +87,22 @@
 <div class="challenges" style="padding-top:10px" *ngIf="!result&&!display">
        <div id="accordion" role="tablist" >
                 <div class="card"  style="margin-bottom: 13px; margin-top: -5px;" *ngFor="let challenge of challengeList ; let i =index">
-                    <div class="card-header" role="tab" [attr.id]="'heading_' + i"  >
+                    <div class="card-header" role="tab" [attr.id]="'heading_' + i" data-parent="#accordion" [attr.href]="'#collapse_'+i"  aria-expanded="false" [attr.aria-controls]="'collapse_' + i" >
                       <h5 class="mb-0">
-                        <a data-toggle="collapse" (click)=arrow() data-parent="#accordion" [attr.href]="'#collapse_'+i"  aria-expanded="false" [attr.aria-controls]="'collapse_' + i">
-                        {{challenge.title}}
-                        </a>
+                        <p style="cursor: pointer;padding-top:8px" id="tilepara" data-toggle="collapse" (click)=arrow() data-parent="#accordion" [attr.href]="'#collapse_'+i"  aria-expanded="false" [attr.aria-controls]="'collapse_' + i">
+                          {{challenge.title}}
+                          </p>
+
+                      <a (click) =arrow() >   <i [attr.href]="'#collapse_'+i" style="margin-top:-30px" data-parent="#accordion"   aria-expanded="false" [attr.aria-controls]="'collapse_' + i" *ngIf=!showArrow class="fa fa-angle-down fa-2x position pull-right"></i> </a>
+                      <a (click) =arrow() >
+                          <i [attr.href]="'#collapse_'+i" style="margin-top:-30px" (click)=arrow()  data-parent="#accordion"  aria-expanded="false" [attr.aria-controls]="'collapse_' + i" *ngIf=showArrow class="fa fa-angle-up  fa-2x position pull-right"></i></a>
+
                         <!-- <a (click) =arrow() *ngIf=showArrow data-parent="#accordion" [attr.href]="'#collapse_'+i"  aria-expanded="false" [attr.aria-controls]="'collapse_' + i" ><i class="fa fa-angle-down fa-1x position"></i></a>
                         <a (click) =arrow() *ngIf=!showArrow data-parent="#accordion" [attr.href]="'#collapse_'+i"  aria-expanded="false" [attr.aria-controls]="'collapse_' + i"><i class="fa fa-angle-up  fa-1x position"></i></a> -->
                       </h5>
                     </div>
 
-                <div [attr.id]="'collapse_'+i" class="continaer collapse " role="tabpanel" [attr.aria-labelledby]="'heading_' + i">
+                <div [attr.id]="'collapse_'+i" class="container collapse " role="tabpanel" [attr.aria-labelledby]="'heading_' + i">
                   <div class="container card-block">
                     <div class="panel-body listitems" style="padding-left:10px ;font-size: 116%;">
                         <div class="">
@@ -106,8 +111,8 @@
                                       </p>
                         </div>
 
-    <div class="" >
-      <span *ngIf="isValid" class="badge  badge-info pos">{{challenge.tags}}  </span> &nbsp;  <br>
+    <div class="" *ngIf="challenge?.tags">
+      <span  class="badge  badge-info pos">{{challenge.tags}}  </span> &nbsp;  <br>
     </div>
 
 

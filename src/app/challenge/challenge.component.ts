@@ -13,7 +13,7 @@ export class ChallengeComponent implements OnInit {
   p: number = 1;
   title = "Cookbook Recipes";
   challengeList:any;
-  showArrow=false;
+  showArrow:boolean=false;
   display:boolean=false;
   constructor(private challengeService:ChallengeService, private router : Router) {
    }
@@ -21,7 +21,7 @@ export class ChallengeComponent implements OnInit {
   ngOnInit() {
 
     //  this.challengeService.getChallenges().subscribe(res => this.challengeList=res);
-  
+
   }
 
   getChallenges(value:string){

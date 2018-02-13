@@ -9,15 +9,13 @@
 .pagination {
     margin-left: 70% !important
   }
-div:hover {
 
-      pointer:cursor !important;
-  }
+
 .icon{
 
   padding: 0 0 0 407px;
   cursor:pointer;
-  cursor:hand;
+
 }
 
 .downicon{
@@ -50,6 +48,7 @@ div:hover {
 .display{
   background-image: "../../assests/search.png";
   padding-top: 10px;
+  cursor: pointer;
 }
 .listitems{
   text-decoration: none;
@@ -66,7 +65,11 @@ div:hover {
       text-align: justify;
 
 }
-challenges{
+.challenges{
   font-family: -webkit-body;
 font-size: 116%;
+}
+
+#tilepara.hover{
+  cursor: pointer;
 }
