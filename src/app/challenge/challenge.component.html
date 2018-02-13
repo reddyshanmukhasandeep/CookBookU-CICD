@@ -106,9 +106,11 @@
                                       </p>
                         </div>
 
-          <div class="" *ngIf="challenge?.tags!==''">
-            <span  class="badge  badge-info pos">{{challenge.tags}}  </span> &nbsp;  <br>
-          </div>
+    <div class="" >
+      <span *ngIf="isValid" class="badge  badge-info pos">{{challenge.tags}}  </span> &nbsp;  <br>
+    </div>
+
+
         <br>
 
                             <div class="">
