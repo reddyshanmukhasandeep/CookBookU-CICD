@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {TabsModule} from "ng2-tabs";
 import { UploadchallengeComponent } from './uploadchallenge/uploadchallenge.component' ;
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -25,7 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ChallengeComponent,
     FilterPipe,
     HeaderComponent,
-    UploadchallengeComponent
+    UploadchallengeComponent,
+    FooterComponent
 
 
   ],
