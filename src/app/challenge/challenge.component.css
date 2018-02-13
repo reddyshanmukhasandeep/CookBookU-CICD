@@ -1,7 +1,12 @@
 .heading{
   padding-left: 10px 0  0 25px;
   font: bold Arial;
+  margin-top: 9px;
+    padding-left: 19px;
 }
+
+
+
 .challenges[_ngcontent-c2] {
     margin-left: -5px!important;
     margin-top: -143px;
@@ -13,8 +18,9 @@
 
 .icon{
 
-  padding: 0 0 0 407px;
+  padding: 0 0 5px 491px;
   cursor:pointer;
+  margin-bottom: 5px;
 
 }
 
@@ -32,7 +38,7 @@
 }
 .searchicon{
   height: 17%;
-  margin-left: -66px;
+  margin-left: 24px;
   margin-top: -1px;
 }
 .noresults{
