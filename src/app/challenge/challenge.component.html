@@ -25,7 +25,7 @@
           <h4> No Results found After Search </h4>
         </div>
 
-          <div class="challenges" style="padding-top:10px" *ngIf="!result&&!display">
+          <!-- <div class="challenges" style="padding-top:10px" *ngIf="!result&&!display">
        <div class="panel-group" [attr.id]="'accordion_' + i" *ngFor="let challenge of challengeList ; let i = index;" role="tablist" aria-multiselectable="true" style="font-size: 115%;">
 
                <div class="panel panel-default" >
@@ -42,7 +42,7 @@
 
 
                       <div class="">
-                        
+
                             <p id="description">
                                       {{challenge.description}}
                                     </p>
@@ -83,6 +83,60 @@
 
      </div>
 
-</div>
+</div> -->
+<div class="challenges" style="padding-top:10px" *ngIf="!result&&!display">
+       <div id="accordion" role="tablist" >
+                <div class="card"  style="margin-bottom: 13px; margin-top: -5px;" *ngFor="let challenge of challengeList ; let i =index">
+                    <div class="card-header" role="tab" [attr.id]="'heading_' + i"  >
+                      <h5 class="mb-0">
+                        <a data-toggle="collapse" (click)=arrow() data-parent="#accordion" [attr.href]="'#collapse_'+i"  aria-expanded="false" [attr.aria-controls]="'collapse_' + i">
+                        {{challenge.title}}
+                        </a>
+                        <!-- <a (click) =arrow() *ngIf=showArrow data-parent="#accordion" [attr.href]="'#collapse_'+i"  aria-expanded="false" [attr.aria-controls]="'collapse_' + i" ><i class="fa fa-angle-down fa-1x position"></i></a>
+                        <a (click) =arrow() *ngIf=!showArrow data-parent="#accordion" [attr.href]="'#collapse_'+i"  aria-expanded="false" [attr.aria-controls]="'collapse_' + i"><i class="fa fa-angle-up  fa-1x position"></i></a> -->
+                      </h5>
+                    </div>
 
+                <div [attr.id]="'collapse_'+i" class="continaer collapse " role="tabpanel" [attr.aria-labelledby]="'heading_' + i">
+                  <div class="container card-block">
+                    <div class="panel-body listitems" style="padding-left:10px ;font-size: 116%;">
+                        <div class="">
+                              <p id="description">
+                                        {{challenge.description}}
+                                      </p>
+                        </div>
+
+          <div class="" *ngIf="challenge?.tags!==''">
+            <span  class="badge  badge-info pos">{{challenge.tags}}  </span> &nbsp;  <br>
+          </div>
+        <br>
+
+                            <div class="">
+                              <ul class="list" style="text-align:justify;">
+                                  <li *ngFor="let solution of challenge.solutionDocuemnt" class="list">
+
+                                    <h5 style="margin-top:-17px">
+                                     <b>Solution</b>
+                                   </h5>
+
+                                    <p id="description">
+                                      {{solution.description}}
+                                    </p>
+                                    <div *ngIf="solution?.reference_link!==''">
+                                      <h5>
+                                        <b>Reference URL</b>
+                                      </h5>
+                                          <p>  <a href={{solution.reference_link}} target="_blank">{{solution.reference_link}}</a></p>
+                      </div>
+                                </li>
+                              </ul>
+                            </div>
+
+                        </div>
+                  </div>
+                </div>
+                </div>
+
+      </div>
+      </div>
 </div>
