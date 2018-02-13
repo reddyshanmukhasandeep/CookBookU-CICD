@@ -1,6 +1,6 @@
 ---
 applications:
-- name: cookBookUI
+- name: cookBook
   memory: 1G
   instances: 1
   buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
