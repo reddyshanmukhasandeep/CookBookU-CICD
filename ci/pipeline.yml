@@ -1,0 +1,36 @@
+---
+resources:
+- name: resource-git-cookbook_UI
+  type: git
+  source:
+    uri: {{git-url}}
+    branch: {{git-branch}}
+    username: {{git-user}}
+    private_key: {{git-private-key}}
+- name: resource-cf-deploy-cookbook_UI
+  type: cf
+  source:
+    api: {{cf-api}}
+    username: {{cf-user}}
+    password: {{cf-password}}
+    organization: {{cf-org}}
+    space: {{cf-space}}
+    skip_cert_check: false
+jobs:
+
+  - name: deploy
+    public: true
+    plan:
+    - get: resource-git-cookbook_UI
+      trigger: true
+      params:
+        PWS_APP_SUFFIX: {{pws-app-suffix}}
+        PWS_API: {{cf-api}}
+        PWS_ORG: {{cf-org}}
+        PWS_USER: {{cf-user}}
+        PWS_PWD: {{cf-password}}
+        PWS_SPACE: {{cf-space}}  
+    - put: resource-cf-deploy-cookbook_UI
+      params:
+        manifest: resource-git-cookbook_UI/manifest.yml
+        path: resource-git-cookbook_UI/dist
