@@ -79,3 +79,39 @@ font-size: 116%;
 #tilepara.hover{
   cursor: pointer;
 }
+
+.prettyprint {
+    display: block;
+    color: #393318;
+}
+
+.post-text pre, .wmd-preview pre {
+    word-wrap: normal;
+	
+}
+
+pre code {
+	font-size: 1.5rem !important;
+font-weight: 400 !important;
+font-family: open sans !important;
+}
+
+#textFont
+{
+	font-family: open sans;
+}
+#reference_link{
+	font-size: 1.5rem !important;
+font-weight: 400 !important;
+font-family: open sans !important;
+}
+#challengetitle{
+font-size: 2rem;
+font-weight: 600;
+font-family: open sans;		
+}
+#titleFont{
+font-size: 2.5rem;
+font-weight: 600;
+font-family: open sanssemibold;	
+}

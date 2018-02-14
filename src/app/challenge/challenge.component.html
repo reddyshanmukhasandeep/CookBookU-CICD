@@ -31,7 +31,7 @@
                <div class="panel panel-default" >
                <div class="panel-heading" role="tab">
                    <h4 class="panel-title">
-                       <a role="button" (click) =arrow() data-toggle="collapse" aria-expanded="false" aria-controls="collapseOne" [attr.data-parent]="'#accordion_' + i" [attr.href]="'#collapseOne_' + i"> {{challenge.title}} </a>
+                       <a role="button" id="challengetitle" (click) =arrow() data-toggle="collapse" aria-expanded="false" aria-controls="collapseOne" [attr.data-parent]="'#accordion_' + i" [attr.href]="'#collapseOne_' + i"> {{challenge.title}} </a>
                   <a (click) =arrow() *ngIf=showArrow data-toggle="collapse" [attr.data-parent]="'#accordion_' + i" [attr.href]="'#collapseOne_' + i" ><i class="fa fa-angle-down fa-1x position"></i></a>
                   <a (click) =arrow() *ngIf=!showArrow data-toggle="collapse" [attr.data-parent]="'#accordion_' + i" [attr.href]="'#collapseOne_' + i" ><i class="fa fa-angle-up  fa-1x position"></i></a>
                    </h4>
@@ -42,15 +42,18 @@
 
 
                       <div class="">
-
-                            <p id="description">
-                                      {{challenge.description}}
-                                    </p>
+                        <h4 style="margin-top:6px">
+                          <b id="textFont">Description</b>
+                        </h4>
+                            
+									
+									<pre><code>{{challenge.description}}
+</code></pre>
                       </div>
 
 				<br />
         <div class="" *ngIf="challenge?.tags!==''">
-          <span  class="badge pos">{{challenge.tags}}  </span> &nbsp;  <br>
+          <span  class="badge pos" id="textFont">{{challenge.tags}}  </span> &nbsp;  <br>
         </div>
         <br />
 
@@ -59,17 +62,19 @@
                                 <li *ngFor="let solution of challenge.solutionDocuemnt" class="list">
 
                                   <h4 style="margin-top:-17px">
-                                   <b>Solution</b>
+                                   <b id="textFont">Solution</b>
                                   </h4>
 
-                                  <p id="description">
-                                    {{solution.description}}
-                                  </p>
+                                  
+                                    
+									<pre><code>{{solution.description}}
+									</code></pre>
+                                  
                                   <div *ngIf="solution?.reference_link!==''">
                                     <h4>
-                                      <b>Reference URL</b>
+                                      <b id="textFont">Reference URL</b>
                                     </h4>
-                                        <p>  <a href={{solution.reference_link}} target="_blank">{{solution.reference_link}}</a></p>
+                                        <p>  <a href={{solution.reference_link}} id="reference_link" target="_blank">{{solution.reference_link}}</a></p>
 										</div>
                               </li>
                             </ul>
