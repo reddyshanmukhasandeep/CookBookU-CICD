@@ -1,7 +1,7 @@
 <div class="container">
       <div class="row" style="padding-top:10px;padding-left: 10px;">
                  <div class="heading col-lg-6" style="margin-top: 9px;padding-left: 19px;">
-                 <h2>{{title}}</h2>
+                 <h2 id="titleFont">{{title}}</h2>
                  </div>
                  <div class="col-lg-6 icon" >
                    <a [routerLink]="['../uploadchallenge']"  ><img src="assets/Add_icon.png" alt="" /></a>
@@ -94,7 +94,7 @@
                 <div class="card"  style="margin-bottom: 13px; margin-top: -5px;" *ngFor="let challenge of challengeList ; let i =index">
                     <div class="card-header"  [attr.id]="'heading_' + i" data-parent="#accordion" [attr.href]="'#collapse_'+i"  aria-expanded="false" [attr.aria-controls]="'collapse_' + i" >
                       <h5 class="mb-0">
-                        <p class="collapsed" style="cursor: pointer;padding-top:8px" id="tilepara" data-toggle="collapse" (click)=arrow() data-parent="#accordion" [attr.href]="'#collapse_'+i"  aria-expanded="false" [attr.aria-controls]="'collapse_' + i">
+                        <p class="collapsed challengetitle" style="cursor: pointer;padding-top:8px" id="tilepara" data-toggle="collapse" (click)=arrow() data-parent="#accordion" [attr.href]="'#collapse_'+i"  aria-expanded="false" [attr.aria-controls]="'collapse_' + i">
                           {{challenge.title}}
                           </p>
 
@@ -111,13 +111,15 @@
                   <div class="container card-block ">
                     <div class="listitems" style="padding-left:10px ;font-size: 116%;">
                         <div class="">
-                              <p id="description">
-                                        {{challenge.description}}
-                                      </p>
+						 <h5 style="margin-top:-17px">
+                                     <b class="textFont">Description</b>
+                                   </h5>
+                              <pre><code>{{challenge.description}}
+									</code></pre>
                         </div>
 
     <div class="" *ngIf="challenge?.tags">
-      <span  class="badge  badge-info pos">{{challenge.tags}}  </span> &nbsp;  <br>
+      <span  class="badge  badge-info pos" id="textFont">{{challenge.tags}}  </span> &nbsp;  <br>
     </div>
 
 
@@ -128,15 +130,14 @@
                                   <li *ngFor="let solution of challenge.solutionDocuemnt" class="list">
 
                                     <h5 style="margin-top:-17px">
-                                     <b>Solution</b>
+                                     <b class="textFont">Solution</b>
                                    </h5>
 
-                                    <p id="description">
-                                      {{solution.description}}
-                                    </p>
+                                    <pre><code>{{solution.description}}
+									</code></pre>
                                     <div *ngIf="solution?.reference_link!==''">
                                       <h5>
-                                        <b>Reference URL</b>
+                                        <b class="textFont">Reference URL</b>
                                       </h5>
                                           <p>  <a href={{solution.reference_link}} target="_blank">{{solution.reference_link}}</a></p>
                       </div>

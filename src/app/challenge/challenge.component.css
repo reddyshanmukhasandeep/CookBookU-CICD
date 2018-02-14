@@ -100,15 +100,20 @@ font-family: open sans !important;
 {
 	font-family: open sans;
 }
+.textFont{
+font-size: 1.5rem !important;
+font-weight: 550 !important;
+font-family: open sans !important;	
+}
 #reference_link{
 	font-size: 1.5rem !important;
 font-weight: 400 !important;
 font-family: open sans !important;
 }
-#challengetitle{
-font-size: 2rem;
-font-weight: 600;
-font-family: open sans;		
+.challengetitle{
+font-size: 2rem !important;
+font-weight: 500 !important;
+font-family: open sans !important;
 }
 #titleFont{
 font-size: 2.5rem;

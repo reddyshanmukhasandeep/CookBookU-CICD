@@ -20,7 +20,7 @@ export class ChallengeComponent implements OnInit {
 
   ngOnInit() {
 
-    //  this.challengeService.getChallenges().subscribe(res => this.challengeList=res);
+    
     $("#collapse [data-toggle=collapse]:last").click()
 
   }
@@ -34,18 +34,20 @@ export class ChallengeComponent implements OnInit {
 
       this.result=false;
       this.value=value;
+	  
+	  var searchText = value.replace(/ /g, "++");
 
-	   this.challengeService.getChallengeByText(value).subscribe(res =>
+	   this.challengeService.getChallengeByText(searchText).subscribe(res =>
        {
          this.challengeList=res;
 
-      console.log("challengeList" +this.challengeList )
+      
       if (typeof this.challengeList !== "undefined" && this.challengeList.length>0 ) {
-         console.log("display if block "+this.display)
+         
            this.display = false
       }
       else {   this.display=true;
-      console.log("display else block "+ this.display);}
+      }
 
     });
 
