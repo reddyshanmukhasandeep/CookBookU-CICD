@@ -5,6 +5,7 @@ import * as $ from 'jquery';
 import {Challenge} from "../challenge";
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-uploadchallenge',
   templateUrl: './uploadchallenge.component.html',

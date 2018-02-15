@@ -17,6 +17,7 @@ import {TabsModule} from "ng2-tabs";
 import { UploadchallengeComponent } from './uploadchallenge/uploadchallenge.component' ;
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -42,7 +43,8 @@ import { FooterComponent } from './footer/footer.component';
     TabsModule,
     TagInputModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+	NgbModule.forRoot()
 
   ],
   providers: [ChallengeService],
