@@ -14,7 +14,7 @@ export class ChallengeService {
   getSolutionsAPI:string="http://cookbookapi.app.dev.digifabricpcf.com/solution";
   getTagsAPI:string="http://cookbookapi.app.dev.digifabricpcf.com/tag"
   addChallengeAPI:string="http://cookbookapi.app.dev.digifabricpcf.com/challenge";
-  getChallengeBySearchText:string="http://cookbookapi.app.dev.digifabricpcf.com/challenge/search/"
+  getChallengeBySearchText:string="http://cookbookapi.app.dev.digifabricpcf.com/challenge/title/"
 
   constructor(private http:HttpClient) {   }
 
